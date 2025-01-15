@@ -2,11 +2,11 @@ import Image from "next/image";
 import React from "react";
 
 const items = [
-    {id: 1, type: "GET", name: "/api/users", color: "text-green-500" },
-    {id: 2, type: "GET", name: "/api/users/{id}", color: "text-green-500" },
-    {id: 3, type: "POST", name: "/api/users", color: "text-yellow-500" },
-    {id: 4, type: "PUT", name: "/api/users/{id}", color: "text-blue-500" },
-    {id: 5, type: "DELETE", name: "/api/users/{id}", color: "text-red-500" }
+    {id: 1, type: "GET", name: "/api/users", color: "text-green-500"},
+    {id: 2, type: "GET", name: "/api/users/{id}", color: "text-green-500"},
+    {id: 3, type: "POST", name: "/api/users", color: "text-yellow-500"},
+    {id: 4, type: "PUT", name: "/api/users/{id}", color: "text-blue-500"},
+    {id: 5, type: "DELETE", name: "/api/users/{id}", color: "text-red-500"}
     // More items...
 ]
 
@@ -21,6 +21,13 @@ export default function Home() {
                 <p className="mt-6 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
                     s23466
                 </p>
+                <a className="mt-6 text-pretty font-medium text-gray-500 text-sm"
+                   href={"https://github.com/seewruuk/tau_s23466_lab_5"}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                >
+                    https://github.com/seewruuk/tau_s23466_lab_5
+                </a>
                 <div className="mt-10">
                     <ul role="list" className="space-y-3">
                         {items.map((item) => (
