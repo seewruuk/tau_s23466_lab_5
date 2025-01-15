@@ -1,4 +1,6 @@
 import React from "react";
+import "./globals.css";
+
 
 export const metadata = {
     title: "Create Next App",
@@ -8,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="pl">
-        <body>
+        <body className={""}>
         {children}
         </body>
         </html>
