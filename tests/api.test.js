@@ -4,7 +4,7 @@ import { parse } from "url";
 import * as usersRoute from "@/app/api/users/route";
 import * as userByIdRoute from "@/app/api/users/[id]/route";
 
-// Funkcja tworząca serwer testowy z obsługą ReadableStream
+
 const createHandlerServer = (handler, method, path, body = null, context = {}) => {
     return createServer(async (req, res) => {
         const parsedUrl = parse(path, true);
@@ -12,16 +12,13 @@ const createHandlerServer = (handler, method, path, body = null, context = {}) =
         req.method = method;
         req.headers["content-type"] = "application/json";
 
-        // Symulacja `req.json()`
         req.json = async () => JSON.parse(body ? JSON.stringify(body) : "{}");
 
         const response = await handler(req, { params: context.params });
 
-        // Ustaw nagłówki odpowiedzi
         response.headers.forEach((value, key) => res.setHeader(key, value));
         res.writeHead(response.status, { "Content-Type": response.headers.get("content-type") });
 
-        // Obsługa ciała odpowiedzi
         if (response.body instanceof ReadableStream) {
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
