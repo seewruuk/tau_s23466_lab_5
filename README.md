@@ -5,6 +5,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Kacper Sewruk
 s23466
 
+Strona:
+```https://tau-s23466-lab5.vercel.app/```
+
 Celem projektu było zaimplementowanie prostego interfejsu API do zarządzania użytkownikami. Projekt obsługuje następujące operacje:
 
 
